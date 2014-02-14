@@ -29,8 +29,15 @@ Feasibility, Infeasibility, and Broken Models
 
 GASP can't be relied on to produce well-formed results, to run without crashing, or even to crash on bad inputs. I need to build in a way to handle model breakage. I'm not sure how to do that, either, but perhaps for the time being just assign a very large constraint violation to a solution with missing / all ∞ objective values. What about only one aircraft versus all three being broken? ∞ versus 3∞?
 
+Quotation
+=========
+
+I haven't laid hands on the book yet, so I'm relaying this quote as given by (Venkataraman and Haftka 2004). "For very large, ill-conditioned problems (200 variables or more) with no gradients available, one is likely to need divine assistance" (Fox 1971). In context, Venkataraman and Haftka point out that this is no longer true. The meaning is basically that the search is for a needle in a haystack because without gradients the problem doesn't tell you how to solve it.
+
 Bibliography
 ------------
+
+Fox, RL. 1971. *Optimization Methods for Engineering Design*. Addison-wesley Series in Mechanics and Thermodynamics. Reading, Mass: Addison-Wesley Pub. Co.
 
 Venkataraman, Satchi, and Raphael T. Haftka. 2004. “Structural Optimization Complexity: What Has Moore’s Law Done for Us?” *Structural and Multidisciplinary Optimization* 28: 275–287.
 
