@@ -27,7 +27,7 @@ There are several things I'm keen to try, but I haven't decided which ones are w
 Feasibility, Infeasibility, and Broken Models
 ---------------------------------------------
 
-GASP can't be relied on to produce well-formed results, to run without crashing, or even to crash on bad inputs. I need to build in a way to handle model breakage. I'm not sure how to do that, either, but perhaps for the time being just assign a very large constraint violation to a solution with missing / all inf objective values. What about only one aircraft versus all three being broken? inf versus 3inf?
+GASP can't be relied on to produce well-formed results, to run without crashing, or even to crash on bad inputs. I need to build in a way to handle model breakage. I'm not sure how to do that, either, but perhaps for the time being just assign a very large constraint violation to a solution with missing / all ∞ objective values. What about only one aircraft versus all three being broken? ∞ versus 3∞?
 
 Bibliography
 ------------
