@@ -48,7 +48,7 @@ GASP can't be relied on to produce well-formed results, to run without crashing,
     I'm not sure how to do that, either, but perhaps for the time being just assign a very large constraint violation to a solution with missing / all $\infty$ objective values.
     What about only one aircraft versus all three being broken?  $\infty$ versus $3\infty$?
 
-# Quotation
+## Quotation
 
 I haven't laid hands on the book yet, so I'm relaying this quote as given by [@venkataraman_and_haftka_2004_complexity].
     "For very large, ill-conditioned problems (200 variables or more) with no gradients available, one is likely to need divine assistance" [@fox_1971_optimization].
