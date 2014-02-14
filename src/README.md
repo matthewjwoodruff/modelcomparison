@@ -37,6 +37,20 @@ There are several things I'm keen to try, but I haven't decided which ones are w
         That means we have $2^9=512$ different, interacting decisions about the platform, before you even get to optimizing the parametric variables.
         It's definitely worth comparing the two cases.
         Does the combinatorial explosion end up hurting optimization?
+* Possibly Sobol' on models?
+    This was part of the DETC paper that started to map out this territory.
+    I could look at sensitivity for each of the 8 platform options, for each of the three aircraft.
+
+## Feasibility, Infeasibility, and Broken Models
+
+GASP can't be relied on to produce well-formed results, to run without crashing, or even to crash on bad inputs.
+    I need to build in a way to handle model breakage.
+    I'm not sure how to do that, either, but perhaps for the time being just assign a very large constraint violation to a solution with missing / all $\inf$ objective values.
+    What about only one aircraft versus all three being broken?  $\inf$ versus $3\inf$?
+
     
 ## Bibliography
 
+<!--
+vim:ts=4:sw=4:expandtab:wrap lbr
+-->
