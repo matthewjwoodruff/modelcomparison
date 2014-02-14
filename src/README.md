@@ -20,7 +20,7 @@ There are several things I'm keen to try, but I haven't decided which ones are w
 * Optimize GASP, using the exact same problem formulation as in [@woodruff_2013_mova].
     Note that I've already done this, but with the old Java Borg, a year and a half ago.
 * Optimize both models, but play with epsilons.
-    This is important because $\varepsilon_\texttt{DOC}$ in particular was set way too large while $\varepsilon_\texttt{ROUGH}$ was set way too small.
+    This is important because $\varepsilon_\textrm{DOC}$ in particular was set way too large while $\varepsilon_\textrm{ROUGH}$ was set way too small.
     This will need a graphical comparison of reference sets --- I can pick up the one from the MOEA comparison paper.
 * Add integer variables.
     This works only with GASP, but it gets at the heart of the study, the new possibilities that come in reach when you use a more sophisticated model.
