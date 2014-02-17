@@ -24,6 +24,10 @@ I think what I really need to do here is figure out what the state of the litera
 I'll be looking for:
 
 * Multi-fidelity modeling
+* Problem formulation
+* Other stuff?  I don't really know what I'm looking for.  Similar studies, I suppose.
+    - Compare solution sets from model and metamodel. (I'm sure this has been done.)
+    - Compare formulations from model and metamodel.  (I'm not sure this has been done.)
 
 
 <!--
