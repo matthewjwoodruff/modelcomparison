@@ -1,4 +1,4 @@
-# Abstract
+# Literature Review
 
 * What is a model for?
 * How does it interact with problem formulation?
@@ -29,6 +29,17 @@ I'll be looking for:
     - Compare solution sets from model and metamodel. (I'm sure this has been done.)
     - Compare formulations from model and metamodel.  (I'm not sure this has been done.)
 
+Let's take this next-to-last point as a start.
+    I'm looking for papers that *compare a model and a metamodel*, because that's what I do too.
+    This will be a natural jumping-off point in the literature, it's clearly the most related body of work.
+    I imagine there's a good deal of error estimation and so forth.
+
+So the question is, do I want to start with papers that are about *developing* metamodels, or papers that are about *using existing* metamodels?  I'm not sure the latter category exists, really.
+
+Alternatively, do I want to just pull the latest number from EJOR, Evolutionary Computation, IEEE Trans Evolutionary Computation, and JMD?
+    Not necessarily in that order.
+
+I'm going to take the latter route.  We'll see what emerges.
 
 <!--
 vim:ts=4:sw=4:expandtab:wrap lbr
