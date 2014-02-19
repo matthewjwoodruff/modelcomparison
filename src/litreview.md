@@ -1,5 +1,11 @@
 # Literature Review
 
+I think JMD is a good journal to target for this paper.
+    They do lots of metamodeling papers, and they also have some more touchy-feely stuff about design novelty.
+    Maybe even possible (although worthwhile?) to get in a technical brief on the difficulties of getting GASP up and running.
+
+Next up, EJOR.
+
 * What is a model for?
 * How does it interact with problem formulation?
     - In terms of solutions produced
