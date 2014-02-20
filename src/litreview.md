@@ -42,7 +42,7 @@ Let's take this next-to-last point as a start.
 
 So the question is, do I want to start with papers that are about *developing* metamodels, or papers that are about *using existing* metamodels?  I'm not sure the latter category exists, really.
 
-Alternatively, do I want to just pull the latest number from EJOR, Evolutionary Computation, IEEE Trans Evolutionary Computation, and JMD?
+Alternatively, do I want to just pull the latest number from EJOR, Evolutionary Computation, IEEE Trans Evolutionary Computation, and JMD? Also simulation opt lit, Proc. WinterSim and perhaps others?
     Not necessarily in that order.
 
 I'm going to take the latter route.  We'll see what emerges.
