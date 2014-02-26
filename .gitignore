@@ -1,1 +1,9 @@
 *.html
+*.aux 
+*.bbl 
+*.blg 
+*.log 
+*.out 
+*.pdf 
+*.docx
+./*.tex 
