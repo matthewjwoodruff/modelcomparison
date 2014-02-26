@@ -38,7 +38,7 @@ Bibliography
 
 Fox, RL. 1971. *Optimization Methods for Engineering Design*. Addison-Wesley Series in Mechanics and Thermodynamics. Reading, Mass: Addison-Wesley Pub. Co.
 
-Venkataraman, Satchi, and Raphael T. Haftka. 2004. “Structural Optimization Complexity: What Has Moore’s Law Done for Us?” *Structural and Multidisciplinary Optimization* 28: 275–287.
+Venkataraman, Satchi, and Raphael T. Haftka. 2004. “Structural Optimization Complexity: what Has Moore’s Law Done for Us?” *Structural and Multidisciplinary Optimization* 28: 275–287.
 
 Woodruff, Matthew, Patrick Reed, and Timothy Simpson. 2013. “Many Objective Visual Analytics: Rethinking the Design of Complex Engineered Systems.” *Structural and Multidisciplinary Optimization* 43 (1) (July): 201–219.
 
