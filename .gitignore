@@ -2,13 +2,13 @@
 *.html
 
 # LaTeX intermediates
-*.aux 
-*.bbl 
-*.blg 
-*.log 
-*.out 
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
 
-# Output files not subject to version control 
-*.tex 
-*.pdf 
+# Output files not subject to version control
+*.tex
+*.pdf
 *.docx
