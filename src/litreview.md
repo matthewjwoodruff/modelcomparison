@@ -103,7 +103,30 @@ But, who it's a real problem for is people who are *just* using a metamodel.
 
 So, what's the context here?
     Is this study in fact a case for dynamic updates of *both* model and formulation?
+    Well, partly.
+    But let's not lose sight of the fact that we initially wanted to talk about the lost opportunities from modeling a mixed-integer problem with a real-valued metamodel.
+    Let's talk about my key area of discomfort with idea.
+    I'm *for* metamodeling.
+    Enthusiastically.
+    Taking our initial idea for this paper and running with it goes against something I think is really important.
+    In fact, I think that even *bad* metamodels are good, because they can give you a sense of the tradeoffs in the problem long before you could get them with an expensive model.
+    (Even if you have to update what you know later, you can start with at least a basic idea of the conflicts you face.)
 
+So this emphatically must not be a paper about lost opportunities.
+    But it can be a positive paper --- a paper, not about lost opportunities, but about *gained* opportunities.
+    What we can now accomplish at the conceptual level by using more sophisticated models because we have more computer power.
+    And, especially, how using multiple models can tell us something about our formulations.
+    Not even the lack of integer variables, but other stuff, like the $\varepsilon$ precision issue I noticed in the early run.
+    (Although, to be fair, did I reevaluate the solutions from the initial run?
+    I think the comparison is skewed because it's not model versus model but model-formulation versus model-formulation.
+    Really?
+    Or is it 27/10 versus 36/10 on the same model?
+    Need to double-check.)
+
+I also was thinking that topological optimization is an interesting domain to demonstrate my idea.
+    The disadvantage it's already a crowded field, with very little room for a new entry to make a splash.
+    It's at least a decade past there being a chance for a first-mover advantage.
+    That being said, the study would be using topopt as an example domain, as a way of unifying the Structural with the Multidisciplinary.
 
 <!--
 vim:ts=4:sw=4:expandtab:wrap lbr
