@@ -1,5 +1,5 @@
 Computational Experiment
-------------------------
+========================
 
 There are several things I'm keen to try, but I haven't decided which ones are worth doing yet:
 
@@ -12,7 +12,7 @@ There are several things I'm keen to try, but I haven't decided which ones are w
 -   Sobol' on models This was part of the DETC paper that started to map out this territory. I could look at sensitivity for each of the 8 platform options, for each of the three aircraft. Also, single-objective problem formulations. I want to take a bite out of approaches that use utility functions. It's a case that's a lot more compelling when I use a model that actually used to be prohibitively expensive. And it lets me revisit the original MOVA argument about cognitive myopia from the point of view of many competing formulations, instead of just one. We can take the original goal programming formulation, cost, performance, as well as a few cost-performance weightings and formulations that include PFPF, again at several weightings.
 
 Bibliography
-------------
+============
 
 Woodruff, Matthew, Patrick Reed, and Timothy Simpson. 2013. “Many Objective Visual Analytics: Rethinking the Design of Complex Engineered Systems.” *Structural and Multidisciplinary Optimization* 43 (1) (July): 201–219.
 

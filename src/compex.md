@@ -1,4 +1,4 @@
-## Computational Experiment
+# Computational Experiment
 
 There are several things I'm keen to try, but I haven't decided which ones are worth doing yet:
 
@@ -32,7 +32,6 @@ There are several things I'm keen to try, but I haven't decided which ones are w
     We can take the original goal programming formulation, cost, performance, as well as a few cost-performance weightings and formulations that include PFPF, again at several weightings.
 
 
-## Bibliography
 <!--
 vim:ts=4:sw=4:expandtab:wrap lbr
 -->

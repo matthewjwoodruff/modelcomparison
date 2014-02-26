@@ -8,8 +8,8 @@ sections/abstract.md: src/license.html src/bibliography.bib src/abstract.md
 	pandoc -i src/abstract.md -o abstract.html --bibliography src/bibliography.bib
 	pandoc -i abstract.html src/license.html -o sections/abstract.md -t markdown_github
 
-sections/compex.md: src/license.html src/bibliography.bib src/compex.md
-	pandoc -i src/compex.md -o compex.html --bibliography src/bibliography.bib
+sections/compex.md: src/license.html src/bibliography.bib src/back.md src/compex.md
+	pandoc -i src/compex.md src/back.md -o compex.html --bibliography src/bibliography.bib
 	pandoc -i compex.html src/license.html -o sections/compex.md -t markdown_github
 
 draftinput.tex: src/bibliography.bib src/abstract.md src/compex.md src/back.md
