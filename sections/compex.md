@@ -1,20 +1,120 @@
 Computational Experiment
 ========================
 
-There are several things I'm keen to try, but I haven't decided which ones are worth doing yet:
+<table>
+<col width="13%" />
+<col width="10%" />
+<col width="15%" />
+<col width="28%" />
+<col width="30%" />
+<thead>
+<tr class="header">
+<th align="left">Decision Variables</th>
+<th align="left">Objectives</th>
+<th align="left">Learn from Reference Sets</th>
+<th align="left">Learn from Global Sensitivity Analysis</th>
+<th align="left">Learn from Search Dynamics</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p>27 real</p></td>
+<td align="left"><p>9 minmax and PFPF</p></td>
+<td align="left"><p>Baseline for comparing models. They're close, some infeasible. <br /></p></td>
+<td align="left"><p>Here is where we start seeing aggregation yield weird results.</p></td>
+<td align="left"><p>Same search operators?</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>27 real</p></td>
+<td align="left"><p>GP and PFPF</p></td>
+<td align="left"><p>? Haven't done yet, expecting much more divergence.</p></td>
+<td align="left"><p>Expecting another data point showing greater divergence between models with more aggregation.</p></td>
+<td align="left"><p>Same search operators?</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>27 real</p></td>
+<td align="left"><p>F1, F2, F3 (PFPF)</p></td>
+<td align="left"><p>? Haven't done yet, expecting something in between GP and basic minmax behavior</p></td>
+<td align="left"><p>Again expecting greater divergence with more aggregation.</p></td>
+<td align="left"><p>Same search operators?</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>27 real + 9 int</p></td>
+<td align="left"><p>9 minmax and PFPF</p></td>
+<td align="left"><p>What price do we pay for integer variables? Can we do as well as the more restrictive formulation? Do we make big gains anywhere? This is a new formulation and we don't know what we don't know, so expect the results to raise new questions / suggest new formulations.</p></td>
+<td align="left"><p>No longer have the RSM as a baseline. Do integer variables interact with real variables? Do integer variables interact with each other? Does the presence of these integer variables change the dependency structure of the real variables?</p></td>
+<td align="left"><p>Do different search operators work better when you have a mixed-integer problem?</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>27 real + 9 int</p></td>
+<td align="left"><p>GP and PFPF</p></td>
+<td align="left"><p>Does it get harder to optimize in this situation? How does the mixed/aggregate formulation compare to the mixed/large formulation and to the real/ aggregate formulation?</p></td>
+<td align="left"><p>How do integer variables affect highly aggregated objectives? More interactions?</p></td>
+<td align="left"><p>We can learn about changes to search operator dynamics resulting both from the presence of integer variables and highly aggregated objectives, and how those factors interact.</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>27 real + 9 int</p></td>
+<td align="left"><p>F1, F2, F3 (PFPF)</p></td>
+<td align="left"><p>Another perspective on aggregation.</p></td>
+<td align="left"><p>Another perspective on aggregation.</p></td>
+<td align="left"><p>Another perspective on aggregation.</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>??? 27 real * 2<sup>9</sup></p></td>
+<td align="left"><p>9 minmax and PFPF</p></td>
+<td align="left"><p>This is kind of crazy --- 256 separate real formulations, brute forcing the integer part of the problem. Easy to automate, but worth it? We'd get to compare the integer formulation to its potential, but this would really be a question about Borg's ability to optimize mixed integer problems than it would be about the problem formulations per se.</p></td>
+<td align="left"><p>I'm not sure we'd even do sobol' on these. What would we stand to gain? We could show different dependency structures based on the different integer decisions, which might be interesting. On the other hand, we could pick a few select integer decisions from the mixed integer results, just to illustrate the change in dependency structure. That's probably more realistic than doing 256 Sobol' studies and then not even really looking at the results.</p></td>
+<td align="left"><p>I don't think examining search operator dynamics across 256 formulations would be valuable in the least.</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>27 real + 3 int</p></td>
+<td align="left"><p>9 minmax and PFPF</p></td>
+<td align="left"><p>This time we treat the three integer variables as a platform decision. We can contrast with the 9 integer formulation. Is this easier? Better solutions? Faster convergence? How about PFPF?</p></td>
+<td align="left"><p>Do the integer variables affect real variable sensitivities the same when they're platform variables as when they're separate?</p></td>
+<td align="left"><p>Does having fewer / more influential integer variables change the choice of search operators?</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>27 real + 9 int</p></td>
+<td align="left"><p>9 minmax, PFPF, and a platform commonality objective</p></td>
+<td align="left"><p>This breaks apart PFPF from the commonality of the platform decisions. Implicitly this increases the importance of platform decisions. Downside is that we now have two competing interpretations of PFPF, whether it's just parametric commonality or the whole deal. Another drawback is that we're now at eleven objectives, which is dangerously close to being impossible to optimize.</p></td>
+<td align="left"><p>Sobol' won't have anything new to tell us compared to the other formulation, since there's no mystery about the dependency structure for PFPF and this other commonality measure.</p></td>
+<td align="left"><p>Does the search struggle with this many objectives?</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>27 real</p></td>
+<td align="left"><p>Single-objective formulations. GP, F1, F2, a few weightings from GP+PFPF, F1+F2, F1+F2+PFPF</p></td>
+<td align="left"><p>Consequences of myopic objective formulations.</p></td>
+<td align="left"><p>This one admits a comparison between GASP and RSM sensitivities.</p></td>
+<td align="left"><p>Not hard to collect, not sure if they have anything important to say.</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>27 real + 9 int</p></td>
+<td align="left"><p>Single-objective formulations. GP, F1, F2, a few weightings from GP+PFPF,</p></td>
+<td align="left"><p>Consequences of myopic objective formulations.</p></td>
+<td align="left"><p>We get these for free if we run Sobol' sequences for this DV formulation.</p></td>
+<td align="left"><p>Ditto</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>27 real + 3 int</p></td>
+<td align="left"><p>Single-objective formulations. GP, F1, F2, a few weightings from GP+PFPF, F1+F2, F1+F2+PFPF</p></td>
+<td align="left"><p>Consequences of myopic objective formulations.</p></td>
+<td align="left"><p>We get these for free if we run Sobol' sequences for this DV formulation.</p></td>
+<td align="left"><p>Ditto</p></td>
+</tr>
+</tbody>
+</table>
 
--   Optimize GASP, using the exact same problem formulation as in (Woodruff, Reed, and Simpson 2013). Note that I've already done this, but with the old Java Borg, a year and a half ago.
--   Optimize both models, but play with epsilons. This is important because *ɛ*<sub>DOC</sub> in particular was set way too large while *ɛ*<sub>ROUGH</sub> was set way too small. This will need a graphical comparison of reference sets --- I can pick up the one from the MOEA comparison paper.
--   Add integer variables. This works only with GASP, but it gets at the heart of the study, the new possibilities that come in reach when you use a more sophisticated model.
-    -   Need a version of PFPF that is comparable with the old. Simply extending the old version would work, although it's intended for parametric commonality rather than integer decisions.
-    -   Alternative 1: Integer variables (**R**[etractable not fixed]**B**[lades=]**3**[not 2]**L**[ow rather than high wing]) are platform decisions, i.e., there are only three of them. This obviates the need for changes to PFPF. In this case there are 2 × 2 × 2 = 8 platform possibilities. The current state of the metamodel is actually that it is three metamodels, one for each aircraft. To support the additional options in the metamodel, we would require seven (2<sup>3</sup> − 1) more metamodels *for each aircraft*, for 21 more metamodels in total. That's *if* we actually wanted to compare the metamodel in this situation, which we probably don't.
-    -   Alternative 2: Integer variables are individual aircraft decisions. In this case, we have 3 × 3 = 9 integer variables. That means we have 2<sup>9</sup> = 512 different, interacting decisions about the platform, before you even get to optimizing the parametric variables. It's definitely worth comparing the two cases. Does the combinatorial explosion end up hurting optimization?
--   Sobol' on models This was part of the DETC paper that started to map out this territory. I could look at sensitivity for each of the 8 platform options, for each of the three aircraft. Also, single-objective problem formulations. I want to take a bite out of approaches that use utility functions. It's a case that's a lot more compelling when I use a model that actually used to be prohibitively expensive. And it lets me revisit the original MOVA argument about cognitive myopia from the point of view of many competing formulations, instead of just one. We can take the original goal programming formulation, cost, performance, as well as a few cost-performance weightings and formulations that include PFPF, again at several weightings.
+I'm not sure I'm going to do everything in this massive table border=1. And I'm sure I'll do things that aren't in the table. Some of the experiments don't do much to support arguments in favor of reformulation or to show what new opportunities we have with a more complex model. I did the top row last year with the Java versions of everything. That will be a good double-check for this study, because this one's going to use CBorg.
+
+Notes
+=====
+
+-   I know epsilons are a problem that goes unacknowledged in this table border=1. That's because I'm not really ready to bring in the preliminary results that show just how crucial the epsilon resolution is. *ɛ*<sub>DOC</sub> in particular was set way too large while *ɛ*<sub>ROUGH</sub> was set way too small in all of my previous studies.
+-   This will need a graphical comparison of reference sets --- I can pick up the one from the MOEA comparison paper.
+-   PFPF is an issue. It won't be the same PFPF anymore if it includes integer variables for the 9-int formulations.
 
 Bibliography
 ============
-
-Woodruff, Matthew, Patrick Reed, and Timothy Simpson. 2013. “Many Objective Visual Analytics: Rethinking the Design of Complex Engineered Systems.” *Structural and Multidisciplinary Optimization* 43 (1) (July): 201–219.
 
 License
 -------
