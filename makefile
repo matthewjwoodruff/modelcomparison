@@ -20,8 +20,8 @@ sections/compex.md: src/license.html src/bibliography.bib src/back.md src/compex
 	sed -e "s/align/valign=\"top\" align/g;s/<table/<table border=1/" -i compex.html
 	pandoc -i compex.html src/license.html -o sections/compex.md -t markdown_github
 
-draftinput.tex: src/bibliography.bib src/abstract.md src/compex.md src/back.md
-	pandoc src/abstract.md src/compex.md src/back.md -o draftinput.tex --metadata biblio-files=src/bibliography.bib  --natbib --chapters
+draftinput.tex: src/bibliography.bib src/abstract.md src/compex.md src/back.md src/intro.md
+	pandoc src/abstract.md src/intro.md src/compex.md src/back.md -o draftinput.tex --metadata biblio-files=src/bibliography.bib  --natbib --chapters
 
 draft.tex: src/drafttemplate.tex
 	cp src/drafttemplate.tex draft.tex
