@@ -1,6 +1,6 @@
 all: markdown pdf
 
-markdown: README.md sections/abstract.md sections/compex.md sections/intro.md
+markdown: README.md sections/abstract.md sections/compex.md sections/intro.md sections/draft.md
 pdf: draft.pdf
 
 README.md: src/README.md src/license.html
@@ -18,6 +18,10 @@ sections/intro.md: src/license.html src/bibliography.bib src/intro.md
 sections/compex.md: src/license.html src/bibliography.bib src/back.md src/compex.md
 	pandoc -i src/compex.md src/back.md -o compex.html --bibliography src/bibliography.bib
 	pandoc -i compex.html src/license.html -o sections/compex.md -t markdown_github
+
+sections/draft.md: src/license.html src/bibliography.bib src/back.md src/abstract.md src/intro.md src/compex.md
+	pandoc -i src/abstract.md src/intro.md src/compex.md src/back.md -o draft.html --bibliography src/bibliography.bib
+	pandoc -i draft.html src/license.html -o sections/draft.md -t markdown_github
 
 draftinput.tex: src/bibliography.bib src/abstract.md src/compex.md src/back.md src/intro.md
 	pandoc src/abstract.md src/intro.md src/compex.md src/back.md -o draftinput.tex --metadata biblio-files=src/bibliography.bib  --natbib --chapters
