@@ -10,12 +10,19 @@
 +-------------------------------+-------------------------------------------+
 | Formulation                   | Explanation                               |
 +===============================+===========================================+
-| 27 real                       | Baseline formulation                      |
+| 27 real                       | Baseline formulation, RB3L (retractable   |
+|                               | gear, three blades, low wing)             |
 +-------------------------------+-------------------------------------------+
 | 27 real + 3 integer           | Integer variables are for specifying a    |
 |                               | platform.  RB3L is one of the eight       |
 |                               | possible platforms.                       |
 +-------------------------------+-------------------------------------------+
+
+### Integer Variables
+
+* GEAR: fixed or retractable
+* BLADES: two or three
+* WING: high or low
 
 ## Objective Function Formulations
 

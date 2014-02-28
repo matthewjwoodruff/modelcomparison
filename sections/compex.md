@@ -22,7 +22,7 @@ Decision Variable Formulations
 <tbody>
 <tr class="odd">
 <td align="left"><p>27 real</p></td>
-<td align="left"><p>Baseline formulation</p></td>
+<td align="left"><p>Baseline formulation, RB3L (retractable gear, three blades, low wing)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>27 real + 3 integer</p></td>
@@ -30,6 +30,12 @@ Decision Variable Formulations
 </tr>
 </tbody>
 </table>
+
+### Integer Variables
+
+-   GEAR: fixed or retractable
+-   BLADES: two or three
+-   WING: high or low
 
 Objective Function Formulations
 -------------------------------
