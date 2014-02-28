@@ -22,10 +22,6 @@ Decision Variable Formulations
 <td align="left"><p>27 real + 3 integer</p></td>
 <td align="left"><p>Integer variables are for specifying a platform.</p></td>
 </tr>
-<tr class="odd">
-<td align="left"><p>27 real + 9 integer</p></td>
-<td align="left"><p>Integer variables may converge to a platform or sub-platforms, but they don't have to.</p></td>
-</tr>
 </tbody>
 </table>
 
@@ -55,33 +51,20 @@ Objective Function Formulations
 <td align="left"><p>Baseline partly-aggregated formulation</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>9 minmax + PFPF + IC</p></td>
-<td align="left"><p>Where IC is an appropriate integer commonality measure. Important for the 27 + 9 mixed integer formulations.</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>GP + PFPF + IC</p></td>
-<td align="left"><p>ditto</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>F1 + F2 + PFPF + IC</p></td>
-<td align="left"><p>ditto</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>objectives + (PFPF + IC)</p></td>
-<td align="left"><p>The three formulations above with the commonality measures aggregated together.</p></td>
-</tr>
-<tr class="even">
 <td align="left"><p>Utility functions</p></td>
 <td align="left"><p>GP, F1, F2 on their own plus samples from the F1-F2 weighting space. Plus samples from the weighting space of each of the above with PFPF.</p></td>
 </tr>
 </tbody>
 </table>
 
+Analysis
+--------
+
 Notes
-=====
+-----
 
 -   I know epsilons are a problem that goes unacknowledged in this table. *ɛ*<sub>DOC</sub> in particular was set way too large while *ɛ*<sub>ROUGH</sub> was set way too small in all of my previous studies.
--   This will need a graphical comparison of reference sets --- I can pick up the parallel coords from the MOEA comparison paper.
+-   This will need a graphical comparison of reference sets --- I can pick up the parallel coords from the forthcoming MOEA comparison paper.
 -   (Woodruff, Simpson, and Reed 2013) covered some of this ground before, but in much less detail
 
 Bibliography
