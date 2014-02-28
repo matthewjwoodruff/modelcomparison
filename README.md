@@ -4,8 +4,10 @@ New Perspectives from Optimizing an Expensive Model
 Sections
 --------
 
--   [Abstract](sections/abstract.md)
--   [Computational Experiment](sections/compex.md)
+-   [Abstract](sections/draft.md#abstract)
+-   [Introduction](sections/draft.md#Introduction)
+-   [Computational Experiment](sections/draft.md#computational-experiment)
+-   [Bibliography](sections/draft.md#bibliography)
 
 License
 -------
