@@ -24,7 +24,14 @@ So this study comes down to two things:
 
 This leads to the question of what my research question is.
 
-"Can using a higher-accuracy model improve how we use a low-accuracy model?" :This is a bit vague. "Does using a higher-accuracy model give us access to new problem formulations?" :This is gobsmackingly obvious and not worth writing a paper about. "Does using single-objective problem formulations for expensive models have any drawbacks?" :Vague, and I don't see what it would add to (Woodruff, Reed, and Simpson 2013).
+"Can using a higher-accuracy model improve how we use a low-accuracy model?"  
+This is a bit vague.
+
+"Does using a higher-accuracy model give us access to new problem formulations?"  
+This is gobsmackingly obvious and not worth writing a paper about.
+
+"Does using single-objective problem formulations for expensive models have any drawbacks?"  
+Vague, and I don't see what it would add to (Woodruff, Reed, and Simpson 2013).
 
 <table>
 <col width="34%" />
