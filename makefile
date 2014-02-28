@@ -1,6 +1,6 @@
 all: markdown pdf
 
-markdown: README.md sections/abstract.md sections/compex.md
+markdown: README.md sections/abstract.md sections/compex.md sections/intro.md
 pdf: draft.pdf
 
 README.md: src/README.md src/license.html
@@ -10,6 +10,10 @@ README.md: src/README.md src/license.html
 sections/abstract.md: src/license.html src/bibliography.bib src/abstract.md
 	pandoc -i src/abstract.md -o abstract.html --bibliography src/bibliography.bib
 	pandoc -i abstract.html src/license.html -o sections/abstract.md -t markdown_github
+
+sections/intro.md: src/license.html src/bibliography.bib src/intro.md
+	pandoc -i src/intro.md -o intro.html --bibliography src/bibliography.bib
+	pandoc -i intro.html src/license.html -o sections/intro.md -t markdown_github
 
 sections/compex.md: src/license.html src/bibliography.bib src/back.md src/compex.md
 	pandoc -i src/compex.md src/back.md -o compex.html --bibliography src/bibliography.bib
