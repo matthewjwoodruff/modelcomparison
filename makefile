@@ -1,4 +1,7 @@
-all: draft.pdf README.md sections/abstract.md sections/compex.md
+all: markdown pdf
+
+markdown: README.md sections/abstract.md sections/compex.md
+pdf: draft.pdf
 
 README.md: src/README.md src/license.html
 	pandoc -i src/README.md -o README.html --bibliography src/bibliography.bib

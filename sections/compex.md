@@ -24,14 +24,37 @@ So this study comes down to two things:
 
 This leads to the question of what my research question is.
 
-"Can using a higher-accuracy model improve how we use a low-accuracy model?"  
+*Can using a higher-accuracy model improve how we use a low-accuracy model?*  
 This is a bit vague.
 
-"Does using a higher-accuracy model give us access to new problem formulations?"  
+*Does using a higher-accuracy model give us access to new problem formulations?*  
 This is gobsmackingly obvious and not worth writing a paper about.
 
-"Does using single-objective problem formulations for expensive models have any drawbacks?"  
+*Does using single-objective problem formulations for expensive models have any drawbacks?*  
 Vague, and I don't see what it would add to (Woodruff, Reed, and Simpson 2013).
+
+*Using a more accurate model gives us*more\* opportunities for expressive problem formulation, and we should take advantage of them rather than cramming everything into a single objective.*: Not a question, but I think it's a concise statement of my theme. Although there's perhaps a small contradiction between the fact that we're expanding decision variables but talking about objectives. Maybe the point is that even with the*same objectives*, myopia bites you. Perhaps I'm looking for a point about the*computational expense of myopia\*?
+
+*What opportunities for problem formulation arise when we use a more accurate model?*  
+This doesn't really get us there.
+
+*What can we learn about a problem using the new formulation options that become available when a more accurate model is used?*  
+OK, that's basically what this study is looking at. And it gets at the theme, because with single-objective formulations you won't learn anything much by swapping in a new model, you'll just get a different point in the design space. Now, can we connect this with the computational expense of myopia? It could be phrased more diplomatically, in terms of a tradeoff between information content and computational cost. Let's get specific, then. Do we want to have a Borg vs. EGO shootout? Both start by sampling the decision space, EGO with LHS and Borg with uniform random for serial or LHS for parallel.
+
+Research question  
+*What is the nature of the tradeoff between information, solution quality, and computational expense?* But the problem with making this an EGO-Borg shootout is that it's *so* dependent on the problem. Also, we lose sight of the point about the design insights gained within MOVA.
+
+Is EGO compatible with MOVA? This is an interesting question. I'm starting to feel a bit trolled by EGO, though. It's a powerful idea with a big following, but maybe it's not worth taking aim at in this paper. At least not so explicitly.
+
+So maybe this is a question to lay before the bosses. *We could take a swipe at EGO with this study. Is it worth doing? We won't be able to focus on design insights for the GAA problem if we do.*
+
+What about initializing algorithm runs with a reference set?
+
+On the other hand, comparing with EGO means *implementing* EGO, and that's a big pile of work I don't want to do.
+
+This is our research question. *What can we learn about a problem using the new formulation options that become available when a more accurate model is used?*
+
+This is our hypothesis. *Single-objective problem formulations are less able to exploit the new design opportunities afforded by using a more accurate model.* I.e., we don't expect to see them produce much better results than with the metamodel.
 
 <table>
 <col width="34%" />
