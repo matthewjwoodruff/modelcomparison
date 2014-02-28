@@ -1,6 +1,12 @@
 Computational Experiment
 ========================
 
+Models
+------
+
+-   Polynomial response surface model
+-   GASP
+
 Decision Variable Formulations
 ------------------------------
 
@@ -20,7 +26,7 @@ Decision Variable Formulations
 </tr>
 <tr class="even">
 <td align="left"><p>27 real + 3 integer</p></td>
-<td align="left"><p>Integer variables are for specifying a platform.</p></td>
+<td align="left"><p>Integer variables are for specifying a platform. RB3L is one of the eight possible platforms.</p></td>
 </tr>
 </tbody>
 </table>
@@ -60,10 +66,24 @@ Objective Function Formulations
 Analysis
 --------
 
+-   Optimize (x50 seeds) all combinations of DV and objective formulations.
+    -   For the real DVs, use both models.
+    -   For RSM solutions, reevaluate with GASP.
+    -   For all optimization runs, collect search operator dynamics. We may get the chance to make the secondary point that search operator dynamics are a good proxy for sensitivity analysis.
+-   Something other than Borg for single-objective optimization? CMAES? Borg with recency turned on? Fake single-objective optimization with artificially tiny epsilons and after-the-fact sampling from the weighting spaces?
+-   From all solutions, compute reference sets for each set of objectives. Make parallel coordinate plots and compare, both in decision space and objective space.
+-   Perform Sobol' global sensitivity analysis for all of the objective functions plus the constraint violation function.
+    -   Quasi-random sampling of 27 variables for RSM
+    -   Quasi-random sampling of 27 variables for GASP
+    -   Quasi-random sampling of 27 + 3 variables for GASP
+    -   Can compute all objectives' sensitivities from there
+    -   Will need spider plots plus more compact visualization. (To be developed?)
+
 Notes
 -----
 
--   I know epsilons are a problem that goes unacknowledged in this table. *ɛ*<sub>DOC</sub> in particular was set way too large while *ɛ*<sub>ROUGH</sub> was set way too small in all of my previous studies.
+-   This is a much bigger study than it would appear from a casual inspection of the tables above, since it's really the cartesian product of model choice, DV formulation, objective formulation, and analysis.
+-   I know epsilons are a problem that goes unacknowledged. *ɛ*<sub>DOC</sub> in particular was set too large while *ɛ*<sub>ROUGH</sub> was set too small in my previous studies. One of the learnings I'm going to have to talk about is the epsilons, and I'm not sure how to avoid having the whole study get derailed.
 -   This will need a graphical comparison of reference sets --- I can pick up the parallel coords from the forthcoming MOEA comparison paper.
 -   (Woodruff, Simpson, and Reed 2013) covered some of this ground before, but in much less detail
 
