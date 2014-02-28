@@ -1,6 +1,31 @@
 Computational Experiment
 ========================
 
+This study is taking aim at the idea that you can use a utility function and get good results. There's this idea that for expensive models you have to use a utility function. My hypothesis is that expensive models practically demand more sophisticated problem formulations. The reason is that, the more sophisticated the model, the greater the distortions introduced by a utility function. Does that make any sense? Now that I see it in black and white, I think that's a bit wrong. But suppose that's the hypothesis. How would we test it? Well, it would suffice to show that a single objective formulation leads you farther astray with GASP than with the RSM. What would that mean exactly? That the solutions you get from those formulations blatantly ignore opportunities for good performance, but that they somehow do it more for GASP. This is starting to sound far too much like the MOVA argument. And also not particularly likely. Let's try again.
+
+I think we need to distinguish between decision variable formulation and objective formulation. There's also constraints, but they're on the output side. Let's call it, "input formulation", and "output formulation". OK, so more sophisticated models open up a lot more input formulations, but the output formulations are somewhat less model dependent? Well, not really. Blanket statement, and not even true for the GAA problem. Maybe we don't need to focus on this distinction.
+
+So what do we gain from using a more complex model? We can make more sophisticated problem formulations. But if you're stuck in single-objective land, you have to aggregate the outputs of you model to a high degree, and you lose the benefit of upgrading to a more accurate model. Ah ha! Let's chase this idea.
+
+Single-objective optimization aggregates the outputs of the model into one function. So you're spending a lot of computer time and money on a more accurate model, but then when you optimize it you're taking all of that complexity and cramming it into a single number that has arbitrary units. That sounds like madness. How do we demonstrate this is a problem using GASP? (The link to the RSM being simply that upgrading to a more sophisticated model allows us to have this insight.)
+
+Again, I don't think that there's anything different from the original MOVA paper in this argument. In fact, I think this whole line of thinking is a dead end for this paper --- It's just chasing the same argument I already presented in (Woodruff, Reed, and Simpson 2013).
+
+So that brings us to a different point. This paper has to be about something else. The abstract talks about the opportunities you gain. That's actually a really straightforward point to make. Optimize a more sophisticated model and take advantage of its integer variables, then get better solutions, at least in some respects. But we can also use this opportunity to reiterate the MOVA argument about myopia and hysteresis.
+
+Incidentally it might be awesome if we found that at least some of the single objective formulations were harder to optimize. Show that the single objective problem formulations *create difficult interdependencies* that make the problems harder to optimize. That's nice, but the data might not support it.
+
+Actually, we can use this study the other way round. Not that we're trying to justify MOVA any more, instead look at how well swapping out the model serves MOVA. Gives us more perspective on problem formulations and helps break out of cog hysteresis wrt our choice of formulations.
+
+So this study comes down to two things:
+
+1.  Using a more sophisticated model lets us find new parts of the Pareto frontier, i.e. new design alternatives.
+2.  Using a more sophisticated model serves MOVA because it gives us a new perspective on the problem formulation.
+
+This leads to the question of what my research question is.
+
+"Can using a higher-accuracy model improve how we use a low-accuracy model?" :This is a bit vague. "Does using a higher-accuracy model give us access to new problem formulations?" :This is gobsmackingly obvious and not worth writing a paper about. "Does using single-objective problem formulations for expensive models have any drawbacks?" :Vague, and I don't see what it would add to (Woodruff, Reed, and Simpson 2013).
+
 <table>
 <col width="34%" />
 <col width="26%" />
@@ -234,10 +259,14 @@ Notes
 -   I know epsilons are a problem that goes unacknowledged in this table. That's because I'm not really ready to bring in the preliminary results that show just how crucial the epsilon resolution is. *ɛ*<sub>DOC</sub> in particular was set way too large while *ɛ*<sub>ROUGH</sub> was set way too small in all of my previous studies.
 -   This will need a graphical comparison of reference sets --- I can pick up the one from the MOEA comparison paper.
 -   PFPF is an issue. It won't be the same PFPF anymore if it includes integer variables for the 9-int formulations.
--   covered some of this ground before, but in much less detail
+-   (Woodruff, Simpson, and Reed 2013) covered some of this ground before, but in much less detail
 
 Bibliography
 ============
+
+Woodruff, Matthew, Patrick Reed, and Timothy Simpson. 2013. “Many Objective Visual Analytics: Rethinking the Design of Complex Engineered Systems.” *Structural and Multidisciplinary Optimization* 43 (1) (July): 201–219.
+
+Woodruff, Matthew, Timothy Simpson, and Patrick Reed. 2013. “Diagnostic Analysis of Metamodels’ Multivariate Dependencies and Their Impacts in Many-Objective Design Optimization.” In *Proceedings of the ASME 2013 IDETC/CIE Conference*. ASME.
 
 License
 -------

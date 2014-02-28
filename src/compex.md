@@ -56,7 +56,20 @@ Actually, we can use this study the other way round.
 So this study comes down to two things:
 
 1. Using a more sophisticated model lets us find new parts of the Pareto frontier, i.e. new design alternatives.
-1. Using a more sophisticated model serves MOVA
+1. Using a more sophisticated model serves MOVA because it gives us a new perspective on the problem formulation.
+
+This leads to the question of what my research question is.
+
+"Can using a higher-accuracy model improve how we use a low-accuracy model?"
+:This is a bit vague.
+"Does using a higher-accuracy model give us access to new problem formulations?"
+:This is gobsmackingly obvious and not worth writing a paper about.
+"Does using single-objective problem formulations for expensive models have any drawbacks?"
+:Vague, and I don't see what it would add to [@woodruff_2013_mova].
+
+
+
+
 
 +-------------------------------+-----------------------+-----------------------------------+
 | Decision Variables            | Objectives            | Learn from Reference Sets         |
