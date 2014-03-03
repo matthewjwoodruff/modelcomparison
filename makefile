@@ -23,6 +23,9 @@ draft.pdf: draft.tex draftinput.tex src/bibliography.bib
 	pdflatex draft.tex
 	pdflatex draft.tex
 
+gasp/quietgasp:
+	gfortran -fno-automatic gasp/gaspall.f -o gasp/quietgasp
+
 clean:
 	rm -f *html
 	rm -f *md
