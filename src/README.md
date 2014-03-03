@@ -2,10 +2,10 @@
 
 ## Sections
 
-* [Abstract](sections/draft.md#abstract)
-* [Introduction](sections/draft.md#Introduction)
-* [Computational Experiment](sections/draft.md#computational-experiment)
-* [Bibliography](sections/draft.md#bibliography)
+* [Abstract](draft.md#abstract)
+* [Introduction](draft.md#Introduction)
+* [Computational Experiment](draft.md#computational-experiment)
+* [Bibliography](draft.md#bibliography)
 
 <!--
 vim:ts=4:sw=4:expandtab:wrap lbr
