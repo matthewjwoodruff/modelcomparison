@@ -12,3 +12,7 @@
 *.tex
 *.pdf
 *.docx
+
+# GASP (proprietary)
+gaspall.f
+quietgasp
