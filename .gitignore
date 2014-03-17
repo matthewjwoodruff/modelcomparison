@@ -2,6 +2,7 @@
 # *.html
 
 # LaTeX intermediates
+latex/
 # *.aux
 # *.bbl
 # *.blg
