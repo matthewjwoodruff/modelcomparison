@@ -46,7 +46,7 @@ paperclean: nojunk
 nojunk:
 	rm -f src/README.html
 	rm -f src/draft.html src/README.html
-	rm -f latex/*{aux,bbl,blg,log,out,tex}
+	rm -f latex/*{aux,bbl,blg,log,out,tex,bib}
 
 binclean:
 	rm -f bin/gasp/quietgasp
