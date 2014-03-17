@@ -30,15 +30,21 @@ latex/draftinput.tex: src/bibliography.bib src/paper/abstract.md src/paper/compe
 latex/draft.tex: src/paper/drafttemplate.tex latex
 	cp src/paper/drafttemplate.tex latex/draft.tex
 
-pdf/draft.pdf: latex/draft.tex latex/draftinput.tex src/bibliography.bib latex
-	mkdir -p pdf
+latex/bibliography.bib: src/bibliography.bib
+	mkdir -p latex
 	cp src/bibliography.bib latex
+
+latex/draft.pdf: latex/draft.tex latex/draftinput.tex latex/bibliography.bib
+	mkdir -p latex
 	cd latex; \
 	pdflatex draft.tex; \
 	bibtex draft; \
 	pdflatex draft.tex; \
-	pdflatex draft.tex; \
-	mv draft.pdf ../pdf
+	pdflatex draft.tex
+
+pdf/draft.pdf: latex/draft.pdf
+	mkdir -p pdf
+	cp latex/draft.pdf pdf/
 
 #### paperclean
 
@@ -54,7 +60,10 @@ nojunk:
 
 slides/slides.html: src/proposal/slides.md src/bibliography.bib src/license.html
 	mkdir -p slides
-	pandoc -t slidy -s src/proposal/slides.md src/license.html -o slides/slides.html --standalone --self-contained --slide-level=1 --bibliography src/bibliography.bib
+	pandoc -t slidy -s src/proposal/slides.md  -o slides/slides.html --standalone --self-contained --slide-level=1 --bibliography src/bibliography.bib
+
+slidesclean:
+	rm -f slides/slides.html
 
 #### binaries
 
@@ -66,7 +75,7 @@ binclean:
 
 ### clean
 
-clean: paperclean
+clean: paperclean slidesclean
 
 allclean: paperclean binclean 
 
