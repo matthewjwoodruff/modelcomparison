@@ -3,21 +3,21 @@
 all: paper binaries slides
 binaries: bin/gasp/quietgasp
 paper: markdown pdf
-slides: slides.html
+slides: slides/slides.html
 
 markdown: README.md draft.md
 pdf: draft
-draft: latex/draft.pdf
+draft: pdf/draft.pdf
 
 #### markdown
 
 README.md: src/README.md src/license.html src/bibliography.bib
-	pandoc -i src/README.md -o src/README.html --bibliography src/bibliography.bib
-	pandoc -i src/README.html src/license.html -o README.md -t markdown_github
+	pandoc -i src/README.md -o html/README.html --bibliography src/bibliography.bib
+	pandoc -i html/README.html src/license.html -o README.md -t markdown_github
 
 draft.md: src/license.html src/bibliography.bib src/paper/back.md src/paper/abstract.md src/paper/intro.md src/paper/compex.md
-	pandoc -i src/paper/abstract.md src/paper/intro.md src/paper/compex.md src/paper/back.md -o src/draft.html --bibliography src/bibliography.bib
-	pandoc -i src/draft.html src/license.html -o draft.md -t markdown_github
+	pandoc -i src/paper/abstract.md src/paper/intro.md src/paper/compex.md src/paper/back.md -o html/draft.html --bibliography src/bibliography.bib
+	pandoc -i html/draft.html src/license.html -o draft.md -t markdown_github
 
 #### pdf
 
@@ -30,25 +30,33 @@ latex/draftinput.tex: src/bibliography.bib src/paper/abstract.md src/paper/compe
 latex/draft.tex: src/paper/drafttemplate.tex latex
 	cp src/paper/drafttemplate.tex latex/draft.tex
 
-latex/draft.pdf: latex/draft.tex latex/draftinput.tex src/bibliography.bib latex
+pdf/draft.pdf: latex/draft.tex latex/draftinput.tex src/bibliography.bib latex
+	mkdir -p pdf
 	cp src/bibliography.bib latex
 	cd latex; \
 	pdflatex draft.tex; \
 	bibtex draft; \
 	pdflatex draft.tex; \
-	pdflatex draft.tex
+	pdflatex draft.tex; \
+	mv draft.pdf ../pdf
 
 #### paperclean
 
 paperclean: nojunk
-	rm -f draft.md README.md latex/draft.pdf
+	rm -f draft.md README.md pdf/draft.pdf
 
 nojunk:
-	rm -f src/README.html
-	rm -f src/draft.html src/README.html
+	rm -f html/README.html
+	rm -f html/draft.html
 	rm -f latex/*{aux,bbl,blg,log,out,tex,bib}
 
-### binaries
+#### proposal
+
+slides/slides.html: src/proposal/slides.md src/bibliography.bib src/license.html
+	mkdir -p slides
+	pandoc -t slidy -s src/proposal/slides.md src/license.html -o slides/slides.html --standalone --self-contained --slide-level=1 --bibliography src/bibliography.bib
+
+#### binaries
 
 bin/gasp/quietgasp: src/gasp/gaspall.f
 	gfortran -fno-automatic src/gasp/gaspall.f -o bin/gasp/quietgasp
