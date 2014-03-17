@@ -1,12 +1,15 @@
-all: paper binaries
+#### Big aliases
 
+all: paper binaries slides
 binaries: bin/gasp/quietgasp
-
 paper: markdown pdf
+slides: slides.html
 
 markdown: README.md draft.md
 pdf: draft
 draft: latex/draft.pdf
+
+#### markdown
 
 README.md: src/README.md src/license.html src/bibliography.bib
 	pandoc -i src/README.md -o src/README.html --bibliography src/bibliography.bib
@@ -15,6 +18,8 @@ README.md: src/README.md src/license.html src/bibliography.bib
 draft.md: src/license.html src/bibliography.bib src/paper/back.md src/paper/abstract.md src/paper/intro.md src/paper/compex.md
 	pandoc -i src/paper/abstract.md src/paper/intro.md src/paper/compex.md src/paper/back.md -o src/draft.html --bibliography src/bibliography.bib
 	pandoc -i src/draft.html src/license.html -o draft.md -t markdown_github
+
+#### pdf
 
 latex:
 	mkdir -p latex
@@ -33,12 +38,7 @@ latex/draft.pdf: latex/draft.tex latex/draftinput.tex src/bibliography.bib latex
 	pdflatex draft.tex; \
 	pdflatex draft.tex
 
-bin/gasp/quietgasp: src/gasp/gaspall.f
-	gfortran -fno-automatic src/gasp/gaspall.f -o bin/gasp/quietgasp
-
-clean: paperclean
-
-allclean: paperclean binclean
+#### paperclean
 
 paperclean: nojunk
 	rm -f draft.md README.md latex/draft.pdf
@@ -48,5 +48,17 @@ nojunk:
 	rm -f src/draft.html src/README.html
 	rm -f latex/*{aux,bbl,blg,log,out,tex,bib}
 
+### binaries
+
+bin/gasp/quietgasp: src/gasp/gaspall.f
+	gfortran -fno-automatic src/gasp/gaspall.f -o bin/gasp/quietgasp
+
 binclean:
 	rm -f bin/gasp/quietgasp
+
+### clean
+
+clean: paperclean
+
+allclean: paperclean binclean 
+
