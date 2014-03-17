@@ -1,17 +1,17 @@
 # Intermediate HTML files
-*.html
+# *.html
 
 # LaTeX intermediates
-*.aux
-*.bbl
-*.blg
-*.log
-*.out
+# *.aux
+# *.bbl
+# *.blg
+# *.log
+# *.out
 
 # Output files not subject to version control
-*.tex
-*.pdf
-*.docx
+# *.tex
+# *.pdf
+# *.docx
 
 # GASP (proprietary)
 gaspall.f
