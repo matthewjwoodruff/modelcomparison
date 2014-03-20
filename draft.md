@@ -21,6 +21,8 @@ Motivation
 
 Once you start talking about more expensive objective functions, it's hard to ignore the influence of EGO. EGO's major selling point is the idea that it requires very few expensive function evaluations to optimize. But its major drawback is that it optimizes a single utility function. What I want to point out is that using a single utility function can make your optimization results less useful even as they become more accurate. Whether the utility function benefits from the extra variables depends on what it is, and on how complicated its dependency structure with respect to the variables is. I'll optimize mixed-integer formulations of the GAA problem using GASP, both single-objective and many-objective, and compare the results to the RSM results for the same objectives.
 
+There are a lot of surrogate modeling approaches out there with the same basic structure: do an initial sample, make a metamodel, optimize that to choose a new place to sample, update the metamodel, repeat until out of computer time. (Forrester and Keane 2009) calls this the two-phase approach. (This citation is a review paper by one of the few people who seem to be doing very good work on surrogate based optimization.) Most of these assume a single objective, although (Forrester and Keane 2009) are ahead of the game and discuss multiobjective optimization too.
+
 Computational Experiment
 ========================
 
@@ -114,10 +116,14 @@ Notes
 -   This is a much bigger study than it would appear from a casual inspection of the tables above, since it's really the cartesian product of model choice, DV formulation, objective formulation, and analysis.
 -   I know epsilons are a problem that goes unacknowledged. *ɛ*<sub>DOC</sub> in particular was set too large while *ɛ*<sub>ROUGH</sub> was set too small in my previous studies. One of the learnings I'm going to have to talk about is the epsilons, and I'm not sure how to avoid having the whole study get derailed.
 -   This will need a graphical comparison of reference sets --- I can pick up the parallel coords from the forthcoming MOEA comparison paper.
--   (**???**) covered some of this ground before, but in much less detail
+-   (Woodruff, Simpson, and Reed 2013) covered some of this ground before, but in much less detail
 
 Bibliography
 ============
+
+Forrester, Alexander IJ, and Andy J Keane. 2009. “Recent Advances in Surrogate-Based Optimization.” *Progress in Aerospace Sciences* 45 (1): 50–79.
+
+Woodruff, Matthew, Timothy Simpson, and Patrick Reed. 2013. “Diagnostic Analysis of Metamodels’ Multivariate Dependencies and Their Impacts in Many-Objective Design Optimization.” In *Proceedings of the ASME 2013 IDETC/CIE Conference*. ASME.
 
 License
 -------
