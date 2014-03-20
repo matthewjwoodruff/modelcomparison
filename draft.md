@@ -114,12 +114,10 @@ Notes
 -   This is a much bigger study than it would appear from a casual inspection of the tables above, since it's really the cartesian product of model choice, DV formulation, objective formulation, and analysis.
 -   I know epsilons are a problem that goes unacknowledged. *ɛ*<sub>DOC</sub> in particular was set too large while *ɛ*<sub>ROUGH</sub> was set too small in my previous studies. One of the learnings I'm going to have to talk about is the epsilons, and I'm not sure how to avoid having the whole study get derailed.
 -   This will need a graphical comparison of reference sets --- I can pick up the parallel coords from the forthcoming MOEA comparison paper.
--   (Woodruff, Simpson, and Reed 2013) covered some of this ground before, but in much less detail
+-   (**???**) covered some of this ground before, but in much less detail
 
 Bibliography
 ============
-
-Woodruff, Matthew, Timothy Simpson, and Patrick Reed. 2013. “Diagnostic Analysis of Metamodels’ Multivariate Dependencies and Their Impacts in Many-Objective Design Optimization.” In *Proceedings of the ASME 2013 IDETC/CIE Conference*. ASME.
 
 License
 -------
