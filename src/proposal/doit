@@ -1,1 +1,0 @@
-pandoc -t slidy -s slides.md -o slides.html --standalone --self-contained --slide-level=1 --bibliography bibliography.bib
