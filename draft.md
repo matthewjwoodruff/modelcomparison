@@ -1,7 +1,9 @@
 Abstract
 ========
 
-Steady increases in computer power have made it possible to use more computationally expensive models in conceptual design optimization studies. These more complex models present new opportunities for problem formulations that exploit features not present in lower-fidelity models. In the past, many studies have explored the benchmark general aviation aircraft product family design problem using a simple polynomial regression model based on the behavior of the more computationally expensive General Aviation Synthesis Program (GASP). This study, in contrast, explores the problem formulation opportunities presented by the GASP model itself. These include not only single- and multi-objective optimization results from the same problem formulations used with the regression model, but also an exploration of several mixed-integer problem formulations that become available when the full GASP model is used. In addition to multi-objective optimization, these mixed-integer problem formulations are subjected to global sensitivity analysis to characterize their interaction with the GASP model. The results of this study emphasize the importance of exploring multiple competing hypotheses about a design optimization problem, highlighting the sensitivity of design optimality to problem formulation.
+Many Objective Visual Analytics: A Case Study in Constructive Problem Framing
+
+This paper presents a case study in which the Many Objective Visual Analytics (MOVA) conceptual framework for design optimization informs the constructive framing of a product family design problem. Constructive problem framing is a process that starts by acknowledging that the problem under consideration is not fully understood, treating the problem's formulation and even its basic assumptions as fluid and subject to revision by the designer. Learning about the problem leads to changes to the designer's assumptions and problem formulation, and ultimately to the selection of a design. The selected case study revisits the General Aviation Aircraft product family design problem (GAA Problem), previously studied with computationally inexpensive response surface models, using an aircraft design synthesis model instead. A complex model makes it possible to explore a wide variety of new formulations for the GAA Problem, while modern computing hardware and the cutting-edge Borg optimization framework makes it possible to optimize them. This paper reports the iterative formulation and reformulation of the GAA Problem, describing the process by which new formulation hypotheses emerge and give rise to new designs.
 
 Introduction
 ============
@@ -121,7 +123,7 @@ Notes
 Bibliography
 ============
 
-Forrester, Alexander IJ, and Andy J Keane. 2009. “Recent Advances in Surrogate-Based Optimization.” *Progress in Aerospace Sciences* 45 (1): 50–79.
+Forrester, Alexander IJ, and Andy J Keane. 2009. “Recent Advances in Surrogate-based Optimization.” *Progress in Aerospace Sciences* 45 (1): 50–79.
 
 Woodruff, Matthew, Timothy Simpson, and Patrick Reed. 2013. “Diagnostic Analysis of Metamodels’ Multivariate Dependencies and Their Impacts in Many-Objective Design Optimization.” In *Proceedings of the ASME 2013 IDETC/CIE Conference*. ASME.
 
