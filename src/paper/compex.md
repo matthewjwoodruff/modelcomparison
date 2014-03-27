@@ -1,76 +1,56 @@
 # Computational Experiment
 
-## Models
+Demonstrate several iterations of constructive problem framing,
+each with its own variations on the process, to show how
+different ways of formulating and evaluating hypotheses are
+valid.
 
-* Polynomial response surface model
-* GASP
+## Strategies to exhibit
 
-## Decision Variable Formulations
+These strategies will be combined in some iterations.
 
-+-------------------------------+-------------------------------------------+
-| Formulation                   | Explanation                               |
-+===============================+===========================================+
-| 27 real                       | Baseline formulation, RB3L (retractable   |
-|                               | gear, three blades, low wing)             |
-+-------------------------------+-------------------------------------------+
-| 27 real + 3 integer           | Integer variables are for specifying a    |
-|                               | platform.  RB3L is one of the eight       |
-|                               | possible platforms.                       |
-+-------------------------------+-------------------------------------------+
+1.  *Initial information.*
+    We, like most people, already have a good deal of information
+    about the problem.
+    This iteration shows how we use existing knowledge to form
+    initial hypotheses.
 
-### Integer Variables
+2.  *Visualization.*
+    We probably do this every time, unless we create a
+    formulation that breaks the MOEA.
+    Display our trademark visuals for comparing formulations ---
+    scatter / glyph plot and parallel coordinate, as well as
+    anything new that comes up.
+    Visualization needs to be emphasized as a central tool for
+    forming and evaluating hypotheses.
 
-* GEAR: fixed or retractable
-* BLADES: two or three
-* WING: high or low
+2.  *Full iteration.*
+    Optimize, visualize, compare solutions, form a new
+    hypothesis.
 
-## Objective Function Formulations
+3.  *Branching.*
+    Form multiple hypotheses at the same time and compare them.
 
-+-------------------------------+-------------------------------------------+
-| Formulation                   | Explanation                               |
-+===============================+===========================================+
-| 9 minmax + PFPF               | Baseline many-objective formulation       |
-+-------------------------------+-------------------------------------------+
-| GP + PFPF                     | Baseline highly-aggregated formulation    |
-+-------------------------------+-------------------------------------------+
-| F1 + F2 + PFPF                | Baseline partly-aggregated formulation    |
-+-------------------------------+-------------------------------------------+
-| Utility functions             | GP, F1, F2 on their own plus samples from | 
-|                               | the F1-F2 weighting space.  Plus samples  |
-|                               | from the weighting space of each of the   |
-|                               | above with PFPF.                          |
-+-------------------------------+-------------------------------------------+
+4.  *Short-cut.*
+    Evaluate hypotheses based on existing model evaluations, and
+    decide whether or not to optimize them.
+    Use ancillary Pareto sorting and objective re-evaluation 
 
-## Analysis
+5.  *Carry-forward.*
+    Use existing model evaluations to generate an initial archive
+    for a new problem formulation.
 
-*   Optimize (x50 seeds) all combinations of DV and objective formulations.
-    -   For the real DVs, use both models. 
-    -   For RSM solutions, reevaluate with GASP.
-    -   For all optimization runs, collect search operator dynamics.
-        We may get the chance to make the secondary point that search operator dynamics are a good proxy for sensitivity analysis.
-*   Something other than Borg for single-objective optimization?
-    CMAES?
-    Borg with recency turned on?
-    Fake single-objective optimization with artificially tiny epsilons and after-the-fact sampling from the weighting spaces?
-*   From all solutions, compute reference sets for each set of objectives.
-    Make parallel coordinate plots and compare, both in decision space and objective space.
-*   Perform Sobol' global sensitivity analysis for all of the objective functions plus the constraint violation function.
-    -   Quasi-random sampling of 27 variables for RSM
-    -   Quasi-random sampling of 27 variables for GASP
-    -   Quasi-random sampling of 27 + 3 variables for GASP
-    -   Can compute all objectives' sensitivities from there
-    -   Will need spider plots plus more compact visualization.
-        (To be developed?)
+6.  *Emergent Strategies.*
+    Things I haven't thought of yet that emerge from the process.
 
-## Notes
+## Matrix Formalism?
 
-*   This is a much bigger study than it would appear from a casual inspection of the tables above, since it's really the cartesian product of model choice, DV formulation, objective formulation, and analysis.
-*   I know epsilons are a problem that goes unacknowledged.
-    $\varepsilon_\textrm{DOC}$ in particular was set too large while $\varepsilon_\textrm{ROUGH}$ was set too small in my previous studies.
-    One of the learnings I'm going to have to talk about is the epsilons, and I'm not sure how to avoid having the whole study get derailed.
-*   This will need a graphical comparison of reference sets --- I can pick up the parallel coords from the forthcoming MOEA comparison paper.
-*   [@woodruff_2013_DETC] covered some of this ground before, but in much less detail
+We have an opportunity to apply Curtis and Mattson's matrix
+formalism for formulation space exploration in the model
+reevaluation script.
+
 
 <!--
-vim:ts=4:sw=4:expandtab:wrap lbr
+vim:ts=4:sw=4:expandtab:wrap lbr:textwidth=65:ai
 -->
+
